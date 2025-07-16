@@ -1,13 +1,12 @@
 import './App.css';
+import InfoCard from './components/infoCard';
 import Navbar from './components/Navbar';
-import data from './data/jsData.json';
 
 function App() {
-  console.log(data.lessons[0].content);
-
   return (
     <>
       <Navbar />
+      <InfoCard />
     </>
   );
 }
