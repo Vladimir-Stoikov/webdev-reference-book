@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import './App.css';
 import InfoCard from './components/InfoCard';
 import Navbar from './components/Navbar';
+import { Outlet } from 'react-router';
 
 const MainSt = styled.main`
   width: 100vw;
@@ -16,7 +17,8 @@ function App() {
     <>
       <Navbar />
       <MainSt>
-        <InfoCard />
+        {/* <InfoCard /> */}
+        <Outlet />
       </MainSt>
     </>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import styled from 'styled-components';
 
 const NavbarSt = styled.nav`
@@ -11,5 +12,14 @@ const NavbarSt = styled.nav`
 `;
 
 export default function Navbar() {
-  return <NavbarSt>WDRB</NavbarSt>;
+  return (
+    <NavbarSt>
+      <h1>WDRB</h1>
+      <ul>
+        <li>
+          <Link to='/javascript'>JavaScript</Link>
+        </li>
+      </ul>
+    </NavbarSt>
+  );
 }
