@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import './App.css';
-import InfoCard from './components/InfoCard';
 import Navbar from './components/Navbar';
 import { Outlet } from 'react-router';
 
@@ -17,7 +16,6 @@ function App() {
     <>
       <Navbar />
       <MainSt>
-        {/* <InfoCard /> */}
         <Outlet />
       </MainSt>
     </>

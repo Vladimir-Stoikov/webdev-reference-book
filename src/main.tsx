@@ -5,19 +5,14 @@ import App from './App.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import NotFoundPage from './pages/NotFoundPage.tsx';
 import JavaScriptPage from './pages/JavaScriptPage.tsx';
-
-// const router = createBrowserRouter([
-//   { path: '/', element: <App /> },
-//   { path: '*', element: <NotFoundPage /> },
-//   { path: '/javascript', element: <JavaScriptPage /> },
-// ]);
+import HomePage from './pages/HomePage.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
-      { index: true, element: <App /> },
+      { index: true, element: <HomePage /> },
       { path: '*', element: <NotFoundPage /> },
       { path: '/javascript', element: <JavaScriptPage /> },
     ],
