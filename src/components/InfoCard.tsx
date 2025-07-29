@@ -18,11 +18,10 @@ const SectionSt = styled.section`
   background: linear-gradient(46deg, rgba(34, 34, 34, 1) 0%, rgba(34, 34, 34, 1) 20%, #444444 52%, #3a3a3a 75%, rgba(34, 34, 34, 1) 100%);
 `;
 
-export default function InfoCard() {
-  const header = data.lessons[0].header;
+export default function InfoCard({ title }: { title: string }) {
   return (
     <SectionSt>
-      <h3>{header}</h3>
+      <h3>{title}</h3>
     </SectionSt>
   );
 }
