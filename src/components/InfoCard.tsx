@@ -1,11 +1,11 @@
 import React from 'react';
 
-import data from '../data/jsData.json';
 import styled from 'styled-components';
 
 const SectionSt = styled.section`
-  width: 30%;
-  height: 30%;
+  padding: 5px 5px;
+  width: 35%;
+  height: content;
   position: relative;
   display: flex;
   flex-direction: column;

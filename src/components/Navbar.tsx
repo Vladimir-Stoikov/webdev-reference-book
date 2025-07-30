@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const NavbarSt = styled.nav`
   width: 100%;
-  height: 5rem;
+  height: 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,10 +14,15 @@ const NavbarSt = styled.nav`
 
 const H1St = styled.h1`
   color: white;
+  font-size: 2rem;
 `;
 
 const UlSt = styled.ul`
   list-style: none;
+  display: flex;
+  gap: 3rem;
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
 `;
 
 const LinkSt = styled(Link)`
@@ -28,12 +33,15 @@ const LinkSt = styled(Link)`
 export default function Navbar() {
   return (
     <NavbarSt>
-      <Link to='/'>
+      <LinkSt to='/'>
         <H1St>WDRB</H1St>
-      </Link>
+      </LinkSt>
       <UlSt>
         <li>
           <LinkSt to='/javascript'>JavaScript</LinkSt>
+        </li>
+        <li>
+          <LinkSt to='/typescript'>TypeScript</LinkSt>
         </li>
       </UlSt>
     </NavbarSt>

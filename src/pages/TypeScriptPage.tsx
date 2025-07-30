@@ -12,14 +12,14 @@ const MainSt = styled.main`
   height: 90%;
 `;
 
-export default function JavaScriptPage() {
-  const lessons = jsData.jsLessons;
+export default function TypeScriptPage() {
+  const lessons = jsData.tsLessons;
 
   console.log(lessons);
 
   return (
     <MainSt>
-      <Title title='JavaScript Section' />
+      <Title title='TypeScript Section' />
       <section>
         {lessons.map((part, id) => (
           <InfoCard key={id} title={part.header} />
