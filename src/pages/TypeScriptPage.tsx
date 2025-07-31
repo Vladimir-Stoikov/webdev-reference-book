@@ -22,7 +22,7 @@ export default function TypeScriptPage() {
       <Title title='TypeScript Section' />
       <section>
         {lessons.map((part, id) => (
-          <InfoCard key={id} title={part.header} />
+          <InfoCard key={id} title={part.header} onClick={() => console.log('open modal window')} />
         ))}
       </section>
     </MainSt>

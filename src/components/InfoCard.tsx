@@ -1,5 +1,4 @@
 import React from 'react';
-
 import styled from 'styled-components';
 
 const SectionSt = styled.section`
@@ -18,9 +17,16 @@ const SectionSt = styled.section`
   background: linear-gradient(46deg, rgba(34, 34, 34, 1) 0%, rgba(34, 34, 34, 1) 20%, #444444 52%, #3a3a3a 75%, rgba(34, 34, 34, 1) 100%);
 `;
 
-export default function InfoCard({ title }: { title: string }) {
+interface InfoCardProps {
+  title: string;
+  onClick: () => void;
+}
+
+export default function InfoCard({ title, onClick }: InfoCardProps) {
+  // onClick();
+
   return (
-    <SectionSt>
+    <SectionSt onClick={onClick}>
       <h3>{title}</h3>
     </SectionSt>
   );
