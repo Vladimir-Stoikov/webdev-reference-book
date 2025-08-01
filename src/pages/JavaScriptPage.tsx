@@ -15,7 +15,7 @@ const MainSt = styled.main`
 export default function JavaScriptPage() {
   const lessons = jsData.jsLessons;
 
-  console.log(lessons);
+  // console.log(lessons);
 
   return (
     <MainSt>

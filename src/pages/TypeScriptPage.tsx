@@ -15,7 +15,7 @@ const MainSt = styled.main`
 export default function TypeScriptPage() {
   const lessons = jsData.tsLessons;
 
-  console.log(lessons);
+  // console.log(lessons);
 
   return (
     <MainSt>

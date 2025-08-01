@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router';
 import styled from 'styled-components';
 
 const NavbarSt = styled.nav`
@@ -25,23 +25,31 @@ const UlSt = styled.ul`
   font-size: 1.5rem;
 `;
 
-const LinkSt = styled(Link)`
+const NavLinkSt = styled(NavLink)`
   color: white;
   text-decoration: none;
+  &.active {
+    font-weight: bold;
+    color: blue;
+  }
 `;
 
 export default function Navbar() {
   return (
     <NavbarSt>
-      <LinkSt to='/'>
+      <NavLinkSt to='/'>
         <H1St>WDRB</H1St>
-      </LinkSt>
+      </NavLinkSt>
       <UlSt>
         <li>
-          <LinkSt to='/javascript'>JavaScript</LinkSt>
+          <NavLinkSt className={({ isActive }) => (isActive ? 'active ' : '')} to='/javascript'>
+            JavaScript
+          </NavLinkSt>
         </li>
         <li>
-          <LinkSt to='/typescript'>TypeScript</LinkSt>
+          <NavLinkSt className={({ isActive }) => (isActive ? 'active ' : '')} to='/typescript'>
+            TypeScript
+          </NavLinkSt>
         </li>
       </UlSt>
     </NavbarSt>
