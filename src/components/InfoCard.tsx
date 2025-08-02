@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const SectionSt = styled.section`
   padding: 5px 5px;
-  width: 35%;
+  width: content;
   height: content;
   position: relative;
   display: flex;
@@ -23,8 +23,6 @@ interface InfoCardProps {
 }
 
 export default function InfoCard({ title, onClick }: InfoCardProps) {
-  // onClick();
-
   return (
     <SectionSt onClick={onClick}>
       <h3>{title}</h3>
