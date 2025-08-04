@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const H1St = styled.h1`
   color: white;
-  font-size: 2rem;
+  font-size: 3rem;
 `;
 
 export default function Title({ title }: { title: string }) {

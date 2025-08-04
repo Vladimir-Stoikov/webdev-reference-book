@@ -4,6 +4,7 @@ import jsData from '../data/jsData.json';
 import InfoCard from '../components/InfoCard';
 import Title from '../components/Title';
 import MainSt from '../components/MainSt.styled';
+import SectionSt from '../components/SectionSt.styled';
 
 export default function JavaScriptPage() {
   const lessons = jsData.jsLessons;
@@ -11,11 +12,11 @@ export default function JavaScriptPage() {
   return (
     <MainSt>
       <Title title='JavaScript Section' />
-      <section>
+      <SectionSt>
         {lessons.map((part, id) => (
           <InfoCard key={id} title={part.header} onClick={() => console.log('open modal window')} />
         ))}
-      </section>
+      </SectionSt>
     </MainSt>
   );
 }

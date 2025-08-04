@@ -6,6 +6,7 @@ const MainSt = styled.main`
   width: 90%;
   height: 90%;
   align-items: center;
+  gap: 2rem;
 `;
 
 export default MainSt
