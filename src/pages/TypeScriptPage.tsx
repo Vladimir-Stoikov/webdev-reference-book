@@ -5,6 +5,7 @@ import InfoCard from '../components/InfoCard';
 import Title from '../components/Title';
 import MainSt from '../components/MainSt.styled';
 import SectionSt from '../components/SectionSt.styled';
+import ModalSection from '../components/modalSection.styled';
 
 type activeType = {
   status: boolean;
@@ -29,7 +30,13 @@ export default function TypeScriptPage() {
         {lessons.map((part, id) => (
           <InfoCard key={id} title={part.header} onClick={() => modelWindowHandler(part.id)} />
         ))}
-        {active.status && <div>{lessons[active.dataId - 1].header}</div>}
+        {active.status && (
+          <ModalSection>
+            <Title title={lessons[active.dataId - 1].header} />
+            <p>{lessons[active.dataId - 1].content}</p>
+            <button onClick={() => setActive({ status: false, dataId: 0 })}>CLOSE</button>
+          </ModalSection>
+        )}
       </SectionSt>
     </MainSt>
   );

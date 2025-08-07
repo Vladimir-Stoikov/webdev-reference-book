@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const MainSt = styled.main`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 90%;
