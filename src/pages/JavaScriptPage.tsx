@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import jsData from '../data/jsData.json';
 import InfoCard from '../components/InfoCard';
 import Title from '../components/Title';
-import MainSt from '../components/MainSt.styled';
-import SectionSt from '../components/SectionSt.styled';
-import ModalSection from '../components/modalSection.styled';
+import MainSt from '../components/styled-components/MainSt.styled';
+import SectionSt from '../components/styled-components/SectionSt.styled';
+import ModalSection from '../components/styled-components/ModalSection.styled';
 
 type activeType = {
   status: boolean;

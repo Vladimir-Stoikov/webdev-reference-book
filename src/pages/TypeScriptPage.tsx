@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import jsData from '../data/jsData.json';
 import InfoCard from '../components/InfoCard';
 import Title from '../components/Title';
-import MainSt from '../components/MainSt.styled';
-import SectionSt from '../components/SectionSt.styled';
-import ModalSection from '../components/modalSection.styled';
+import MainSt from '../components/styled-components/MainSt.styled';
+import SectionSt from '../components/styled-components/SectionSt.styled';
+import ModalSection from '../components/styled-components/ModalSection.styled';
+import ButtonSt from '../components/styled-components/ButtonSt.styled';
 
 type activeType = {
   status: boolean;
@@ -34,7 +35,7 @@ export default function TypeScriptPage() {
           <ModalSection>
             <Title title={lessons[active.dataId - 1].header} />
             <p>{lessons[active.dataId - 1].content}</p>
-            <button onClick={() => setActive({ status: false, dataId: 0 })}>CLOSE</button>
+            <ButtonSt onClick={() => setActive({ status: false, dataId: 0 })}>CLOSE</ButtonSt>
           </ModalSection>
         )}
       </SectionSt>

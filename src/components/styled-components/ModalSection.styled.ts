@@ -8,9 +8,12 @@ const ModalSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: darkgray;
+  gap: 3rem;
   border-radius: 1rem;
-  padding-top: 1rem;
+  padding: 1rem;
+  border: solid 0.5rem white;
+  box-shadow: 10px 10px 10px rgba(50, 50, 50, 0.5);
+  background: linear-gradient(46deg, rgba(34, 34, 34, 1) 0%, rgba(34, 34, 34, 1) 20%, #444444 52%, #3a3a3a 75%, rgba(34, 34, 34, 1) 100%);
 `;
 
 export default ModalSection
