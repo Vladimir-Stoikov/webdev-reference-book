@@ -7,6 +7,7 @@ import MainSt from '../components/styled-components/MainSt.styled';
 import SectionSt from '../components/styled-components/SectionSt.styled';
 import ModalSection from '../components/styled-components/ModalSection.styled';
 import ButtonSt from '../components/styled-components/ButtonSt.styled';
+import ParagraphSt from '../components/styled-components/ParagraphSt.styled';
 
 type activeType = {
   status: boolean;
@@ -34,7 +35,7 @@ export default function TypeScriptPage() {
         {active.status && (
           <ModalSection>
             <Title title={lessons[active.dataId - 1].header} />
-            <p>{lessons[active.dataId - 1].content}</p>
+            <ParagraphSt>{lessons[active.dataId - 1].content}</ParagraphSt>
             <ButtonSt onClick={() => setActive({ status: false, dataId: 0 })}>CLOSE</ButtonSt>
           </ModalSection>
         )}
