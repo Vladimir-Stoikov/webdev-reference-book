@@ -29,8 +29,10 @@ const NavLinkSt = styled(NavLink)`
   color: white;
   text-decoration: none;
   &.active {
+    font-size: 1.6rem;
     font-weight: bold;
-    color: blue;
+    color: black;
+    text-shadow: 2px 0 white, 0 2px white, -2px 0 white, 0 -2px white;
   }
 `;
 
