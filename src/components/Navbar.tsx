@@ -15,6 +15,7 @@ const NavbarSt = styled.nav`
 const H1St = styled.h1`
   color: white;
   font-size: 2rem;
+  text-shadow: none;
 `;
 
 const UlSt = styled.ul`
