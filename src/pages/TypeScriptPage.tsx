@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import parse from 'html-react-parser';
 import jsData from '../data/jsData.json';
 import InfoCard from '../components/InfoCard';
 import Title from '../components/Title';
@@ -35,7 +35,7 @@ export default function TypeScriptPage() {
         {active.status && (
           <ModalSection>
             <Title title={lessons[active.dataId - 1].header} />
-            <ParagraphSt>{lessons[active.dataId - 1].content}</ParagraphSt>
+            <ParagraphSt>{parse(lessons[active.dataId - 1].content)}</ParagraphSt>
             <ButtonSt onClick={() => setActive({ status: false, dataId: 0 })}>CLOSE</ButtonSt>
           </ModalSection>
         )}
