@@ -6,8 +6,8 @@ import Title from '../components/Title';
 import MainSt from '../components/styled-components/MainSt.styled';
 import SectionSt from '../components/styled-components/SectionSt.styled';
 import ModalSection from '../components/styled-components/ModalSection.styled';
-import ButtonSt from '../components/styled-components/ButtonSt.styled';
 import ParagraphSt from '../components/styled-components/ParagraphSt.styled';
+import CircleButtonSt from '../components/styled-components/CircleButtonSt.styled';
 
 type activeType = {
   status: boolean;
@@ -36,7 +36,7 @@ export default function JavaScriptPage() {
           <ModalSection>
             <Title title={lessons[active.dataId - 1].header} />
             <ParagraphSt>{parse(lessons[active.dataId - 1].content)}</ParagraphSt>
-            <ButtonSt onClick={() => setActive({ status: false, dataId: 0 })}>CLOSE</ButtonSt>
+            <CircleButtonSt onClick={() => setActive({ status: false, dataId: 0 })}>⨯</CircleButtonSt>
           </ModalSection>
         )}
       </SectionSt>
