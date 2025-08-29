@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './TypeScriptPage.css';
 import parse from 'html-react-parser';
 import jsData from '../data/jsData.json';
@@ -25,6 +25,19 @@ export default function TypeScriptPage() {
       setActive({ status: true, dataId: lessonId });
     }
   }
+
+  useEffect(() => {
+    console.log('change');
+    if (active.status) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+      document.body.style.touchAction = 'auto';
+    };
+  }, [active]);
 
   return (
     <MainSt>
