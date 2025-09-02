@@ -54,6 +54,11 @@ export default function Navbar() {
             TypeScript
           </NavLinkSt>
         </li>
+        <li>
+          <NavLinkSt className={({ isActive }) => (isActive ? 'active ' : '')} to='/exercises'>
+            Exercises
+          </NavLinkSt>
+        </li>
       </UlSt>
     </NavbarSt>
   );

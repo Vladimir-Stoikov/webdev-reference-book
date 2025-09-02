@@ -15,8 +15,8 @@ type activeType = {
   dataId: number;
 };
 
-export default function TypeScriptPage() {
-  const lessons = jsData.tsLessons;
+export default function ExercisesPage() {
+  const lessons = jsData.exercises;
   const [active, setActive] = useState<activeType>({ status: false, dataId: 0 });
 
   function modelWindowHandler(lessonId: number) {
@@ -41,7 +41,7 @@ export default function TypeScriptPage() {
 
   return (
     <MainSt>
-      <Title title='TypeScript Section' />
+      <Title title='Exercises Section' />
       <SectionSt>
         {lessons.map((part, id) => (
           <InfoCard key={id} title={part.header} onClick={() => modelWindowHandler(part.id)} />
