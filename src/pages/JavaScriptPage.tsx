@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './generalPages.css';
 import parse from 'html-react-parser';
 import jsData from '../data/jsData.json';
 import InfoCard from '../components/InfoCard';
@@ -48,7 +49,7 @@ export default function JavaScriptPage() {
         {active.status && (
           <ModalSection>
             <Title title={lessons[active.dataId - 1].header} />
-            <ParagraphSt>{parse(lessons[active.dataId - 1].content)}</ParagraphSt>
+            <ParagraphSt className='data-text'>{parse(lessons[active.dataId - 1].content)}</ParagraphSt>
             <CircleButtonSt onClick={() => setActive({ status: false, dataId: 0 })}>⨯</CircleButtonSt>
           </ModalSection>
         )}
