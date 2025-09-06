@@ -8,6 +8,7 @@ import JavaScriptPage from './pages/JavaScriptPage.tsx';
 import HomePage from './pages/HomePage.tsx';
 import TypeScriptPage from './pages/TypeScriptPage.tsx';
 import ExercisesPage from './pages/ExercisesPage.tsx';
+import ReactPage from './pages/ReactPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: '*', element: <NotFoundPage /> },
       { path: '/javascript', element: <JavaScriptPage /> },
       { path: '/typescript', element: <TypeScriptPage /> },
+      { path: '/react', element: <ReactPage /> },
       { path: '/exercises', element: <ExercisesPage /> },
     ],
   },

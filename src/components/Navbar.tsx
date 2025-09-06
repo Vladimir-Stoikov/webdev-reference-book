@@ -55,6 +55,11 @@ export default function Navbar() {
           </NavLinkSt>
         </li>
         <li>
+          <NavLinkSt className={({ isActive }) => (isActive ? 'active ' : '')} to='/react'>
+            React
+          </NavLinkSt>
+        </li>
+        <li>
           <NavLinkSt className={({ isActive }) => (isActive ? 'active ' : '')} to='/exercises'>
             Exercises
           </NavLinkSt>
