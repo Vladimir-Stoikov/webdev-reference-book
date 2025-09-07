@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './generalPages.css';
 import parse from 'html-react-parser';
-import jsData from '../data/jsData.json';
+import jsData from '../data/webDevData.json';
 import InfoCard from '../components/InfoCard';
 import Title from '../components/Title';
 import MainSt from '../components/styled-components/MainSt.styled';
