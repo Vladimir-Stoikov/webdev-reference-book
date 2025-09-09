@@ -3,11 +3,12 @@ import styled from "styled-components";
 const SectionSt = styled.section`
   display: flex;
   flex-direction: row;
-  width: 90%;
-  height: 90%;
+  flex-wrap: wrap;
+  width: 90vw;
+  height: auto;
   justify-content: center;
   align-items: start;
-  gap: 1rem;
+  gap: 2rem;
 `;
 
 export default SectionSt

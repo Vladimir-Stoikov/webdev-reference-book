@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const SectionSt = styled.section`
-  padding: 5px 5px;
+  padding: 10px 10px;
   width: content;
   height: content;
   position: relative;

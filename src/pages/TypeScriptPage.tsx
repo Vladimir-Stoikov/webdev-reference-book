@@ -27,7 +27,6 @@ export default function TypeScriptPage() {
   }
 
   useEffect(() => {
-    console.log('change');
     if (active.status) {
       document.body.style.overflow = 'hidden';
       document.body.style.touchAction = 'none';
