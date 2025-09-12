@@ -3,10 +3,6 @@
   font-weight: bold;
 }
 
-.data-text span::before {
-  content: "◈ ";
-}
-
 .data-text i {
   color: MediumAquaMarine ;
 }
