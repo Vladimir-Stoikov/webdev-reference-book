@@ -4,12 +4,13 @@ import styled from 'styled-components';
 
 const NavbarSt = styled.nav`
   width: 100%;
-  height: 6rem;
+  height: 7rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-bottom: 3px solid white;
+  gap: 1rem;
 `;
 
 const H1St = styled.h1`
@@ -29,8 +30,13 @@ const UlSt = styled.ul`
 const NavLinkSt = styled(NavLink)`
   color: white;
   text-decoration: none;
+  font-size: 1.6rem;
+  display: inline-block;
+  &:hover {
+    text-shadow: 0 0 1rem white;
+    transform: scale(1.03);
+  }
   &.active {
-    font-size: 1.6rem;
     font-weight: bold;
     color: black;
     text-shadow: 2px 0 white, 0 2px white, -2px 0 white, 0 -2px white;

@@ -18,6 +18,7 @@ padding: 0;
 background: white;
 &:hover {
   transform: scale(1.02);
+  cursor: pointer;
 }
 `
 
