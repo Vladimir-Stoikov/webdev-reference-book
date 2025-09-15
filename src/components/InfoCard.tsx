@@ -15,6 +15,7 @@ const SectionSt = styled.section`
   border-radius: 20px;
   box-shadow: 10px 10px 10px rgba(50, 50, 50, 0.5);
   background: linear-gradient(46deg, rgba(34, 34, 34, 1) 0%, rgba(34, 34, 34, 1) 20%, #444444 52%, #3a3a3a 75%, rgba(34, 34, 34, 1) 100%);
+  cursor: pointer;
 `;
 
 interface InfoCardProps {
