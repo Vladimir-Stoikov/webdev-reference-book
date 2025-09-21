@@ -9,6 +9,7 @@ import SectionSt from '../components/styled-components/SectionSt.styled';
 import ModalSection from '../components/styled-components/ModalSection.styled';
 import ParagraphSt from '../components/styled-components/ParagraphSt.styled';
 import CircleButtonSt from '../components/styled-components/CircleButtonSt.styled';
+import ModalWindow from '../components/ModalWindow';
 
 type activeType = {
   status: boolean;
@@ -19,10 +20,12 @@ export default function TypeScriptPage() {
   const lessons = jsData.tsLessons;
   const [active, setActive] = useState<activeType>({ status: false, dataId: 0 });
 
-  function modelWindowHandler(lessonId: number) {
+  function modelWindowHandler(lessonId?: number) {
     console.log('click');
-    if (!active.status) {
+    if (lessonId && !active.status) {
       setActive({ status: true, dataId: lessonId });
+    } else {
+      setActive({ status: false, dataId: 0 });
     }
   }
 
@@ -45,13 +48,7 @@ export default function TypeScriptPage() {
         {lessons.map((part, id) => (
           <InfoCard key={id} title={part.header} onClick={() => modelWindowHandler(part.id)} />
         ))}
-        {active.status && (
-          <ModalSection>
-            <Title title={lessons[active.dataId - 1].header} />
-            <ParagraphSt className='data-text'>{parse(lessons[active.dataId - 1].content)}</ParagraphSt>
-            <CircleButtonSt onClick={() => setActive({ status: false, dataId: 0 })}>⨯</CircleButtonSt>
-          </ModalSection>
-        )}
+        {active.status && <ModalWindow title={lessons[active.dataId - 1].header} paragraph={parse(lessons[active.dataId - 1].content)} closeCb={modelWindowHandler} />}
       </SectionSt>
     </MainSt>
   );

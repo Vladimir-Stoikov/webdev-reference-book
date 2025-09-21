@@ -1,0 +1,17 @@
+import React from 'react';
+import ModalSection from './styled-components/ModalSection.styled';
+import Title from './Title';
+import ParagraphSt from './styled-components/ParagraphSt.styled';
+import CircleButtonSt from './styled-components/CircleButtonSt.styled';
+
+type PropsType = { title: string; paragraph: React.ReactNode; closeCb: () => void };
+
+export default function ModalWindow({ title, paragraph, closeCb }: PropsType) {
+  return (
+    <ModalSection>
+      <Title title={title} />
+      <ParagraphSt className='data-text'>{paragraph}</ParagraphSt>
+      <CircleButtonSt onClick={closeCb}>⨯</CircleButtonSt>
+    </ModalSection>
+  );
+}
