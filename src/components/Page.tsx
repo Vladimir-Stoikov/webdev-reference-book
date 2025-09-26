@@ -39,9 +39,10 @@ type DataType = {
 type PagePropType = {
   dataPart: string;
   titleName: string;
+  topic?: string[];
 };
 
-export default function Page({ dataPart, titleName }: PagePropType) {
+export default function Page({ dataPart, titleName, topic }: PagePropType) {
   const lessons = webData[dataPart as keyof DataType];
   const [active, setActive] = useState<activeType>({ status: false, dataId: 0 });
 
@@ -68,6 +69,16 @@ export default function Page({ dataPart, titleName }: PagePropType) {
   return (
     <MainSt>
       <Title title={titleName} />
+      {topic && (
+        <>
+          <aside>Темы</aside>
+          <ul>
+            {topic.map((el, id) => (
+              <li key={id}>{el}</li>
+            ))}
+          </ul>
+        </>
+      )}
       <SectionSt>
         {lessons.map((part, id) => (
           <InfoCard key={id} title={part.header} onClick={() => modelWindowHandler(part.id)} />
