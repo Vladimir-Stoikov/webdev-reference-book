@@ -7,6 +7,7 @@ import Title from '../components/Title';
 import MainSt from '../components/styled-components/MainSt.styled';
 import SectionSt from '../components/styled-components/SectionSt.styled';
 import ModalWindow from '../components/ModalWindow';
+import { SidebarSt } from './styled-components/Sidebar.styled';
 
 type activeType = {
   status: boolean;
@@ -69,20 +70,23 @@ export default function Page({ dataPart, titleName, topic }: PagePropType) {
   return (
     <MainSt>
       <Title title={titleName} />
-      {topic && (
-        <>
-          <aside>Темы</aside>
-          <ul>
-            {topic.map((el, id) => (
-              <li key={id}>{el}</li>
-            ))}
-          </ul>
-        </>
-      )}
       <SectionSt>
-        {lessons.map((part, id) => (
-          <InfoCard key={id} title={part.header} onClick={() => modelWindowHandler(part.id)} />
-        ))}
+        <SidebarSt>
+          {topic && (
+            <>
+              <ul>
+                {topic.map((el, id) => (
+                  <li key={id}>{el}</li>
+                ))}
+              </ul>
+            </>
+          )}
+        </SidebarSt>
+        <ul>
+          {lessons.map((part, id) => (
+            <InfoCard key={id} title={part.header} onClick={() => modelWindowHandler(part.id)} />
+          ))}
+        </ul>
         {active.status && <ModalWindow title={lessons[active.dataId - 1].header} paragraph={parse(lessons[active.dataId - 1].content)} closeCb={modelWindowHandler} />}
       </SectionSt>
     </MainSt>
