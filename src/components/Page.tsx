@@ -8,6 +8,7 @@ import MainSt from '../components/styled-components/MainSt.styled';
 import SectionSt from '../components/styled-components/SectionSt.styled';
 import ModalWindow from '../components/ModalWindow';
 import { SidebarSt } from './styled-components/Sidebar.styled';
+import CardsListSt from './styled-components/CardsList.styled';
 
 type activeType = {
   status: boolean;
@@ -71,22 +72,20 @@ export default function Page({ dataPart, titleName, topic }: PagePropType) {
     <MainSt>
       <Title title={titleName} />
       <SectionSt>
-        <SidebarSt>
-          {topic && (
-            <>
-              <ul>
-                {topic.map((el, id) => (
-                  <li key={id}>{el}</li>
-                ))}
-              </ul>
-            </>
-          )}
-        </SidebarSt>
-        <ul>
+        {topic && (
+          <SidebarSt>
+            <ul>
+              {topic.map((el, id) => (
+                <li key={id}>{el}</li>
+              ))}
+            </ul>
+          </SidebarSt>
+        )}
+        <CardsListSt>
           {lessons.map((part, id) => (
             <InfoCard key={id} title={part.header} onClick={() => modelWindowHandler(part.id)} />
           ))}
-        </ul>
+        </CardsListSt>
         {active.status && <ModalWindow title={lessons[active.dataId - 1].header} paragraph={parse(lessons[active.dataId - 1].content)} closeCb={modelWindowHandler} />}
       </SectionSt>
     </MainSt>
