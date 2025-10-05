@@ -56,6 +56,19 @@ export default function Page({ dataPart, titleName, topic }: PagePropType) {
     }
   }
 
+  function togglePage(next: boolean) {
+    const last = lessons.length;
+    if (next) {
+      if (active.dataId !== last) {
+        setActive(prev => ({ status: true, dataId: prev.dataId + 1 }));
+      }
+    } else {
+      if (active.dataId !== 1) {
+        setActive(prev => ({ status: true, dataId: prev.dataId - 1 }));
+      }
+    }
+  }
+
   useEffect(() => {
     if (active.status) {
       document.body.style.overflow = 'hidden';
@@ -86,7 +99,7 @@ export default function Page({ dataPart, titleName, topic }: PagePropType) {
             <InfoCard key={id} title={part.header} onClick={() => modelWindowHandler(part.id)} />
           ))}
         </CardsListSt>
-        {active.status && <ModalWindow title={lessons[active.dataId - 1].header} paragraph={parse(lessons[active.dataId - 1].content)} closeCb={modelWindowHandler} />}
+        {active.status && <ModalWindow title={lessons[active.dataId - 1].header} paragraph={parse(lessons[active.dataId - 1].content)} closeCb={modelWindowHandler} toggle={togglePage} />}
       </SectionSt>
     </MainSt>
   );

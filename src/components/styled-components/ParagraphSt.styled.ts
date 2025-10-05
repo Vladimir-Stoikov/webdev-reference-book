@@ -5,6 +5,7 @@ const ParagraphSt = styled.p`
   font-size: 1.5rem;
   white-space: pre-wrap;
   line-height: 1.05;
+  width: 75vw;
 `
 
 export default ParagraphSt

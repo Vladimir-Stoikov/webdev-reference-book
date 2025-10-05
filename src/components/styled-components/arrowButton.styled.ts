@@ -12,7 +12,7 @@ const ArrowButtonSt = styled.button<ArrowButtonProps>`
   height: 3rem;
   width: 3rem;
   display: flex;
-  align-items: center;
+  align-items: auto;
   justify-content: center;
   font: inherit;
   font-size: 2rem;
@@ -21,6 +21,7 @@ const ArrowButtonSt = styled.button<ArrowButtonProps>`
   border-radius: 50%;
   padding: 0;
   background: white;
+  padding: ${props => props.$left ? '0.1rem 0.3rem 0 0' : '0.1rem 0 0 0.3rem'};
   &:hover {
     transform: scale(1.02);
     cursor: pointer;
