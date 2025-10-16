@@ -9,6 +9,7 @@ import SectionSt from '../components/styled-components/SectionSt.styled';
 import ModalWindow from '../components/ModalWindow';
 import { SidebarSt } from './styled-components/Sidebar.styled';
 import CardsListSt from './styled-components/CardsList.styled';
+import { useProgress } from '../hooks/useProgress';
 
 type activeType = {
   status: boolean;
@@ -48,9 +49,12 @@ export default function Page({ dataPart, titleName, topic }: PagePropType) {
   const lessons = webData[dataPart as keyof DataType];
   const [active, setActive] = useState<activeType>({ status: false, dataId: 0 });
 
+  const { lastRead, getProgress } = useProgress();
+
   function modelWindowHandler(lessonId?: number) {
     if (lessonId && !active.status) {
       setActive({ status: true, dataId: lessonId });
+      lastRead(`${dataPart}-${lessonId}`);
     } else {
       setActive({ status: false, dataId: 0 });
     }
@@ -95,9 +99,10 @@ export default function Page({ dataPart, titleName, topic }: PagePropType) {
           </SidebarSt>
         )}
         <CardsListSt>
-          {lessons.map((part, id) => (
-            <InfoCard key={id} title={part.header} onClick={() => modelWindowHandler(part.id)} />
-          ))}
+          {lessons.map((part, id) => {
+            const progressData = getProgress(`${dataPart}-${part.id}`);
+            return <InfoCard key={id} title={part.header} onClick={() => modelWindowHandler(part.id)} lastRead={progressData?.lastRead} />;
+          })}
         </CardsListSt>
         {active.status && <ModalWindow title={lessons[active.dataId - 1].header} paragraph={parse(lessons[active.dataId - 1].content)} closeCb={modelWindowHandler} toggle={togglePage} />}
       </SectionSt>
